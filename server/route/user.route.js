@@ -6,7 +6,7 @@ const express = require('express');
 
 const userRouter=express.Router();
 
-userRouter.get('/user/getUserDetials')
+userRouter.get('/user/getUserDetials',authToken,getUserDetials)
 
 
 

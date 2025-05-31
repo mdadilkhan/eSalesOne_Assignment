@@ -7,7 +7,7 @@ const {getAllProducts,getProductById,} = require('../controller/product.controll
 const productRouter = express.Router();
 
 
-productRouter.get('/products',authToken, getAllProducts);
-productRouter.get('/products/:id',authToken, getProductById);
+productRouter.get('/products', getAllProducts);
+productRouter.get('/products/:id', getProductById);
 
 module.exports = productRouter;
