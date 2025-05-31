@@ -11,8 +11,17 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
+    "antd": "^5.23.3",
+    "axios": "^1.9.0",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
+    "lodash": "^4.17.21",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-error-boundary": "^5.0.0",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^7.6.1",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
