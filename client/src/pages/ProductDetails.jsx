@@ -4,11 +4,16 @@ import axios from "axios";
 import Carousel from "../components/Carousel"; // import the carousel component
 const Layout = lazy(() => import("../layout/Layout"));
 const API_URL = import.meta.env.VITE_API_URI;
+
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/slices/cartSlices";
+
 const ProductDetails = () => {
+  
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [status, setStatus] = useState("loading");
-
+  const dispatch =useDispatch()
   useEffect(() => {
     let isMounted = true;
     const fetchProduct = async () => {
@@ -54,7 +59,11 @@ const ProductDetails = () => {
           <p className="text-gray-700 mb-6">{product.description}</p>
 
           <div className="flex gap-4">
-            <button className="px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition cursor-pointer">
+            <button className="px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition cursor-pointer"
+              onClick={() => {
+            dispatch(addToCart(product));
+          }}
+            >
               Add to Cart
             </button>
             <button className="px-6 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition cursor-pointer">

@@ -1,10 +1,13 @@
 import React from 'react'
+import Layout from '../layout/Layout'
 
 const payment = () => {
   return (
-    <div>
-      
-    </div>
+    <Layout>
+        <div>
+          payments
+        </div>
+    </Layout>
   )
 }
 

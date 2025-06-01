@@ -11,6 +11,7 @@ const connectToDatabase = require('./db/db');
 // router inport
 const authRouter = require('./route/auth.route');
 const productRouter = require('./route/product.route');
+const cartRouter = require('./route/cart.route');
 
 
 const app=express();
@@ -52,6 +53,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api',authRouter);
 app.use('/api',productRouter)
+app.use('/api',cartRouter)
 
 
 

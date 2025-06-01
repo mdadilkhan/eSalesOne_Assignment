@@ -1,7 +1,7 @@
 import { useEffect, Suspense, lazy } from "react";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import axios from "axios";
 //Componennts
 const Home = lazy(() => import("./pages/Home"));
 const FallBackLoader=lazy(()=>import('./components/FallbackLoader/FallBackLoader'))
@@ -10,8 +10,10 @@ const Payment = lazy(() => import("./pages/Payment"));
 const ProductDetails = lazy(() => import("./pages/ProductDetails"));
 import "./App.css";
 
+// usign default for sending token from cokkies with every api 
+axios.defaults.withCredentials = true;
 
-// axios.defaults.withCredentials = true;
+
 function App() {
   return (
     <>
@@ -21,8 +23,8 @@ function App() {
             <Routes>
               <Route index element={<Home />} />
               <Route path="/product/:id" element={<ProductDetails />} />
-              <Route path="cart" element={<Cart />} />
-              <Route path="payment" element={<Payment />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/payment" element={<Payment />} />
             </Routes>
         </BrowserRouter>
       </Suspense>

@@ -47,8 +47,16 @@ const signup = async (req, res) => {
         { expiresIn: "1d" }
       );
   
-      console.log(token);
-      
+      // console.log(token);
+
+      const data={
+        _id:user._id || null,
+        name:user.name || null,
+        email:user.email || null,
+        cart:user.cart || null,
+        isAdmin:user.isAdmin || null
+      }
+
       res.cookie("token", token, {
         httpOnly: true,
         secure: true,
@@ -56,7 +64,7 @@ const signup = async (req, res) => {
         maxAge: 24 * 60 * 60 * 1000, // 1 day
       });
     
-      return res.status(200).json({ message: "Login Success"});
+      return res.status(200).json({ message: "Login Success",data:data});
     } catch (err) {
       console.log(err);
     }

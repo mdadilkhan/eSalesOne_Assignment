@@ -5,6 +5,7 @@ import {throttle} from "lodash";
 import Card from "./Card";
 import FallbackLoader from "./FallbackLoader/FallBackLoader";
 
+
 const API_URL = import.meta.env.VITE_API_URI;
 
 const InfiniteScroll = () => {
